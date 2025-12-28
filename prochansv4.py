@@ -85,13 +85,7 @@ def update_proxychains(proxies):
     if not marker_found:
         print('No se encontró la línea: # defaults set to "tor"')
         return
-
-    # Estructura mínima válida de ProxyChains
-    new_lines.append("strict_chain\n")
-    new_lines.append("proxy_dns\n")
-    new_lines.append("tcp_read_time_out 15000\n")
-    new_lines.append("tcp_connect_time_out 8000\n\n")
-
+    
     # SOCKS locales primero
     new_lines.append("socks4 127.0.0.1 9050\n")
     new_lines.append("socks5 127.0.0.1 9050\n")
